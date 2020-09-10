@@ -3,6 +3,7 @@ import "./Checkout.css";
 import Subtotal from "./Subtotal";
 import { useStateValue } from "./StateProvide";
 import CheckoutProduct from "./CheckoutProduct";
+import FlipMove from 'react-flip-move';
 const Checkout = () => {
   const [{basket}, dispatch] = useStateValue();
   return (
