@@ -7,6 +7,7 @@ import FlipMove from 'react-flip-move';
 const Checkout = () => {
   const [{basket}, dispatch] = useStateValue();
   return (
+    <FlipMove className="flip-wrapper">
     <div className="checkout">
       <div className="checkout__left">
         <img
@@ -17,8 +18,11 @@ const Checkout = () => {
 
         <div>
           <h2 className="checkout__title">Your Shopping Basket</h2>
+         
+            
           {basket.map(item => (
             <CheckoutProduct
+            key={item.id}
             id={item.id}
             title={item.title}
             price={item.price}
@@ -26,6 +30,7 @@ const Checkout = () => {
             rating={item.rating}
             />
           ))}
+          
         </div>
       </div>
 
@@ -33,6 +38,7 @@ const Checkout = () => {
         <Subtotal/>
       </div>
     </div>
+    </FlipMove>
   );
 };
 
